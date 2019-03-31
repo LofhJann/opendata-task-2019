@@ -23,7 +23,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-        <a class="navbar-brand" href="#">OpenData Task</a>
+        <a class="navbar-brand" href="/">OpenData Task</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -60,10 +60,10 @@
                     <tbody>
                     <tr th:each="data:${sensordata}">
                         <th scope="row" th:text="${#temporals.format(data.date, 'dd.MM.yyyy HH:mm')}"></th>
-                        <td th:text="${data.sensor1}"></td>
-                        <td th:text="${data.sensor2}"></td>
-                        <td th:text="${data.sensor3}"></td>
-                        <td th:text="${data.sensor4}"></td>
+                        <td th:text="${#numbers.formatDecimal(data.sensor1, 2, 2, 'COMMA')}"></td>
+                        <td th:text="${#numbers.formatDecimal(data.sensor2, 2, 2, 'COMMA')}"></td>
+                        <td th:text="${#numbers.formatDecimal(data.sensor3, 2, 2, 'COMMA')}"></td>
+                        <td th:text="${#numbers.formatDecimal(data.sensor4, 2, 2, 'COMMA')}"></td>
                     </tr>
                     </tbody>
                 </table>
