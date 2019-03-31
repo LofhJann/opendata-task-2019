@@ -16,7 +16,7 @@ public class SensorDataService {
     @Autowired
     private SensorDataRepository sensorDataRepository;
 
-    private SensorData restGet() {
+    public SensorData restGet() {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
