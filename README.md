@@ -11,6 +11,8 @@ Other technologies used include **Project Lombok** to reduce boilerplate, **Hero
 
 ... And crontabs running on Amazon EC2 to provide refresh of data hourly by CURLing Application Paths :P
 
+Data should also be updated by Thread() in SensorDataService, but since free Heroku has auto-sleep, it's not bulletproof.
+
 ## Instructions
 Launch application by navigating to https://lofhjann-opendata-task-2019.herokuapp.com/.
 
