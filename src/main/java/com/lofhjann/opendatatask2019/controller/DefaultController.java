@@ -18,5 +18,10 @@ public class DefaultController {
 
         return "404 - Page not found";
     }
+
+    @GetMapping("/")
+    public String home() {
+        return "/index.html";
+    }
 }
 
