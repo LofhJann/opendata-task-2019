@@ -21,21 +21,115 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" th:inline="javascript">
         google.charts.load('current', {packages: ['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Date');
-            data.addColumn('number', 'Sensor 1');
+        google.charts.setOnLoadCallback(drawChart1);
+        google.charts.setOnLoadCallback(drawChart2);
+        google.charts.setOnLoadCallback(drawChart3);
+        google.charts.setOnLoadCallback(drawChart4);
+
+        function drawChart1() {
+            var sensor1Data = new google.visualization.DataTable();
+            sensor1Data.addColumn('string', 'Date');
+            sensor1Data.addColumn('number', 'Sensor 1');
+
             var dataPoints = [[${sensordata}]];
-            for (var i = 0; i < dataPoints.length; i++) {
-                data.addRow([dataPoints[i]['date'], dataPoints[i]['sensor1']]);
+            var pointAmount = 24;
+            console.log(dataPoints[0]['date'].substr(11,5));
+
+            if (dataPoints.length > pointAmount) {
+                for (var i = length - pointAmount - 1; i < dataPoints.length; i++) {
+                    sensor1Data.addRow([dataPoints[i]['date'].substr(11,5), dataPoints[i]['sensor1']]);
+                }
+            } else {
+                for (var i = 0; i < dataPoints.length; i++) {
+                    sensor1Data.addRow([dataPoints[i]['date'].substr(11,5), dataPoints[i]['sensor1']]);
+                }
             }
 
-            var options = {'title': 'Sensor Data',
-                            'height': 900,
-                            'width': 1200};
-            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-            chart.draw(data, options);
+            var options = {
+                'title': 'Sensor 1 data for last 24 hours',
+                'height': 900,
+                'width': 1200
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('chart1_div'));
+            chart.draw(sensor1Data, options);
+        }
+        function drawChart2() {
+            var sensor2Data = new google.visualization.DataTable();
+            sensor2Data.addColumn('string', 'Date');
+            sensor2Data.addColumn('number', 'Sensor 2');
+
+            var dataPoints = [[${sensordata}]];
+            var pointAmount = 24;
+
+            if (dataPoints.length > pointAmount) {
+                for (var i = length - pointAmount - 1; i < dataPoints.length; i++) {
+                    sensor2Data.addRow([dataPoints[i]['date'].substr(11,5), dataPoints[i]['sensor2']]);
+                }
+            } else {
+                for (var i = 0; i < dataPoints.length; i++) {
+                    sensor2Data.addRow([dataPoints[i]['date'].substr(11,5), dataPoints[i]['sensor2']]);
+                }
+            }
+
+            var options = {
+                'title': 'Sensor 2 data for last 24 hours',
+                'height': 900,
+                'width': 1200
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('chart2_div'));
+            chart.draw(sensor2Data, options);
+        }
+        function drawChart3() {
+            var sensor3Data = new google.visualization.DataTable();
+            sensor3Data.addColumn('string', 'Date');
+            sensor3Data.addColumn('number', 'Sensor 3');
+
+            var dataPoints = [[${sensordata}]];
+            var pointAmount = 24;
+
+            if (dataPoints.length > pointAmount) {
+                for (var i = length - pointAmount - 1; i < dataPoints.length; i++) {
+                    sensor3Data.addRow([dataPoints[i]['date'].substr(11,5), dataPoints[i]['sensor3']]);
+                }
+            } else {
+                for (var i = 0; i < dataPoints.length; i++) {
+                    sensor3Data.addRow([dataPoints[i]['date'].substr(11,5), dataPoints[i]['sensor3']]);
+                }
+            }
+
+            var options = {
+                'title': 'Sensor 3 data for last 24 hours',
+                'height': 900,
+                'width': 1200
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('chart3_div'));
+            chart.draw(sensor3Data, options);
+        }
+        function drawChart4() {
+            var sensor4Data = new google.visualization.DataTable();
+            sensor4Data.addColumn('string', 'Date');
+            sensor4Data.addColumn('number', 'Sensor 4');
+
+            var dataPoints = [[${sensordata}]];
+            var pointAmount = 24;
+
+            if (dataPoints.length > pointAmount) {
+                for (var i = length - pointAmount - 1; i < dataPoints.length; i++) {
+                    sensor4Data.addRow([dataPoints[i]['date'].substr(11,5), dataPoints[i]['sensor4']]);
+                }
+            } else {
+                for (var i = 0; i < dataPoints.length; i++) {
+                    sensor4Data.addRow([dataPoints[i]['date'].substr(11,5), dataPoints[i]['sensor4']]);
+                }
+            }
+
+            var options = {
+                'title': 'Sensor 4 data for last 24 hours',
+                'height': 900,
+                'width': 1200
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('chart4_div'));
+            chart.draw(sensor4Data, options);
         }
     </script>
     <title>Some open sensor data...</title>
@@ -69,7 +163,11 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
-            <div id="chart_div" style="width:1200px; height:900px"></div>
+            <div id="chart1_div" style="width:1200px; height:900px"></div>
+            <div id="chart2_div" style="width:1200px; height:900px"></div>
+            <div id="chart3_div" style="width:1200px; height:900px"></div>
+            <div id="chart4_div" style="width:1200px; height:900px"></div>
+
         </div>
     </div>
 </div>
