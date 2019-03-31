@@ -10,6 +10,8 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 @Service
 public class SensorDataService {
 
@@ -24,6 +26,10 @@ public class SensorDataService {
         HttpEntity entity = new HttpEntity(headers);
 
         return restTemplate.exchange("https://opendata.hopefully.works/api/events", HttpMethod.GET, entity, SensorData.class).getBody();
+    }
+
+    public List<SensorData> getAll() {
+        return sensorDataRepository.findAll();
     }
 
     public void create() {
