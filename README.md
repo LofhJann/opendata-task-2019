@@ -1,5 +1,9 @@
 # Eficode Open Data Task 2019
 
+https://lofhjann-opendata-task-2019.herokuapp.com/
+
+Visualization and database for data provided in foreign API. All times are UTC in 'dd-MM-yyyy HH:mm' format.
+
 ## Technologies used
 
 I completed task using **Java SpringBoot** complete with **Thymeleaf** for templates.
