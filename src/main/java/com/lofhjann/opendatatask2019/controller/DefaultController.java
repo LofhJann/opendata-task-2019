@@ -24,7 +24,8 @@ public class DefaultController {
     }
 
     @GetMapping("/")
-    public String home() {
+    public String home(Model model) {
+        model.addAttribute("sensordata", sensorDataService.getAll());
         return "index";
     }
 
