@@ -21,4 +21,5 @@ public class SensorData extends AbstractPersistable<Long> {
     private Double sensor1;
     private Double sensor2;
     private Double sensor3;
+    private Double sensor4;
 }

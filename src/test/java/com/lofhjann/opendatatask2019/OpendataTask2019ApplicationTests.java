@@ -32,7 +32,8 @@ public class OpendataTask2019ApplicationTests {
         Assert.assertTrue(sensorData.getDate() != null
                 && sensorData.getSensor1() != null
                 && sensorData.getSensor2() != null
-                && sensorData.getSensor3() != null);
+                && sensorData.getSensor3() != null
+                && sensorData.getSensor4() != null);
     }
 
     @Test
