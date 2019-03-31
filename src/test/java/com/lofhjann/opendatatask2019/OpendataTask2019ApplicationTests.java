@@ -38,7 +38,6 @@ public class OpendataTask2019ApplicationTests {
 
     @Test
     public void sensorDataIsAddedToDb() {
-        // Repository should be empty always, but lets check just in case.
         long count = sensorDataRepository.count();
 
         sensorDataService.create();

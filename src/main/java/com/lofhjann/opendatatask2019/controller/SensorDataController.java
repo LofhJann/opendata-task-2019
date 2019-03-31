@@ -18,5 +18,4 @@ public class SensorDataController {
         return "redirect:/";
     }
 
-
 }
