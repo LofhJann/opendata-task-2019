@@ -35,7 +35,7 @@
             var pointAmount = 24;
 
             if (dataPoints.length > pointAmount) {
-                for (var i = length - pointAmount - 1; i < dataPoints.length; i++) {
+                for (var i = dataPoints.length - pointAmount - 1; i < dataPoints.length; i++) {
                     sensor1Data.addRow([dataPoints[i]['date'].substr(11,5), dataPoints[i]['sensor1']]);
                 }
             } else {
@@ -68,7 +68,7 @@
             var pointAmount = 24;
 
             if (dataPoints.length > pointAmount) {
-                for (var i = length - pointAmount - 1; i < dataPoints.length; i++) {
+                for (var i = dataPoints.length - pointAmount - 1; i < dataPoints.length; i++) {
                     sensor2Data.addRow([dataPoints[i]['date'].substr(11,5), dataPoints[i]['sensor2']]);
                 }
             } else {
@@ -101,7 +101,7 @@
             var pointAmount = 24;
 
             if (dataPoints.length > pointAmount) {
-                for (var i = length - pointAmount - 1; i < dataPoints.length; i++) {
+                for (var i = dataPoints.length - pointAmount - 1; i < dataPoints.length; i++) {
                     sensor3Data.addRow([dataPoints[i]['date'].substr(11,5), dataPoints[i]['sensor3']]);
                 }
             } else {
@@ -134,7 +134,7 @@
             var pointAmount = 24;
 
             if (dataPoints.length > pointAmount) {
-                for (var i = length - pointAmount - 1; i < dataPoints.length; i++) {
+                for (var i = dataPoints.length - pointAmount - 1; i < dataPoints.length; i++) {
                     sensor4Data.addRow([dataPoints[i]['date'].substr(11,5), dataPoints[i]['sensor4']]);
                 }
             } else {
